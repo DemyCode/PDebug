@@ -11,11 +11,21 @@ def quicksort(l):
     return quicksort(left) + [l[0]] + quicksort(right)
 
 
+def sub_sub_main():
+    return 2
+
+
+def sub_main():
+    return sub_sub_main()
+
+
 def main():
     quicksort([2, 4, 0, 23, -8, 4])
 
 
 if __name__ == '__main__':
-    tracer = Tracer(function_names=['quicksort'], function_filter='include')
+    tracer = Tracer()
+    tracer.activate()
     main()
-    tracer.save()
+    tracer.deactivate()
+    tracer.tree.prettyprint()
